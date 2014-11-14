@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Tabs Example</title>
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+</head>
+  <div ng-app="ionicApp">
+
+    <ion-nav-bar class="bar-assertive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>
+
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-tabs class="tabs-icon-top tabs-assertive">
+
+        <ion-tab title="News" icon="ion-ios7-paper-outline" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Events" icon="ion-ios7-calendar-outline" ui-sref="tabs.events">
+          <ion-nav-view name="events-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view view-title="News">
+        <ion-content padding="true" class="has-header has-footer">
+          <ion-list>
+            <ion-item href="#/tab/news-blogs">Blogs</ion-item>
+            <ion-item href="#/tab/news-by-topic">News by Topic</ion-item>
+        </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/about.html" type="text/ng-template">
+      <ion-view view-title="About">
+        <ion-content class="padding">
+          <h3>Create hybrid mobile apps with the web technologies you love.</h3>
+          <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
+          <p>Built with Sass and optimized for AngularJS.</p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs.html" type="text/ng-template">
+      <ion-view title="News Blogs">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item href="#/tab/news-blogs/fidm-news">FIDM News</ion-item>
+            <ion-item href="#/tab/news-blogs/fidm-museum">FIDM Museum</ion-item>
+            <ion-item href="#/tab/news-blogs/fidm-digital-arts">FIDM Digital arts</ion-item>
+            <ion-item href="#/tab/news-blogs/fashion-club">Fashion Club</ion-item>
+            <ion-item href="#/tab/news-blogs/student-video-blog">Student Video Blog</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs/fidm-news.html" type="text/ng-template">
+      <ion-view title="FIDM News">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item>News Item 1</ion-item>
+            <ion-item>News Item 2</ion-item>
+            <ion-item>News Item 3</ion-item>
+            <ion-item>News Item 4</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs/fidm-museum.html" type="text/ng-template">
+      <ion-view title="FIDM Museum">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item>Museum Item 1</ion-item>
+            <ion-item>Museum Item 2</ion-item>
+            <ion-item>Museum Item 3</ion-item>
+            <ion-item>Museum Item 4</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs/fidm-digital-arts.html" type="text/ng-template">
+      <ion-view title="FIDM Digital Arts">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item>Digital Arts Item 1</ion-item>
+            <ion-item>Digital Arts Item 2</ion-item>
+            <ion-item>Digital Arts Item 3</ion-item>
+            <ion-item>Digital Arts Item 4</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs/fashion-club.html" type="text/ng-template">
+      <ion-view title="Fashion Club">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item>Fashion Club Item 1</ion-item>
+            <ion-item>Fashion Club Item 2</ion-item>
+            <ion-item>Fashion Club Item 3</ion-item>
+            <ion-item>Fashion Club Item 4</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-blogs/student-video-blog.html" type="text/ng-template">
+      <ion-view title="Student Video Blog">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item>Student Video Blog Item 1</ion-item>
+            <ion-item>Student Video Blog Item 2</ion-item>
+            <ion-item>Student Video Blog Item 3</ion-item>
+            <ion-item>Student Video Blog Item 4</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-by-topic.html" type="text/ng-template">
+      <ion-view title="News By Topic">
+        <ion-content padding="true" class="has-header">
+          <ion-list>
+            <ion-item href="#/news-by-topic/alumni">Alumni</ion-item>
+              <ion-item href="#/news-by-topic/careers">Careers</ion-item>
+              <ion-item href="#/news-by-topic/fashion-news-events">Fashion News &amp; Events</ion-item>
+              <ion-item href="#/news-by-topic/fidm-news">FIDM News</ion-item>
+              <ion-item href="#/news-by-topic/fidm-students">FIDM Students</ion-item>
+              <ion-item href="#/news-by-topic/video">Video</ion-item>
+              <ion-item href="#/news-by-topic/apparel-industry-management">Apparel Industry Management</ion-item>
+              <ion-item href="#/news-by-topic/beauty-industry-merchandising-marketing">Beauty Industry Merchandising &amp; Marketing</ion-item>
+              <ion-item href="#/news-by-topic/digital-media">Digital Media</ion-item>
+              <ion-item href="#/news-by-topic/entertainment-set-design-decoration">Entertainment Set Design &amp; Decoration</ion-item>
+              <ion-item href="#/news-by-topic/fashion-design">Fashion Design</ion-item>
+              <ion-item href="#/news-by-topic/fasion-knitwear-design">Fasion Knitwear Design</ion-item>
+              <ion-item href="#/news-by-topic/film-tv-costume-design">Film &amp; TV Costume Design</ion-item>
+              <ion-item href="#/news-by-topic/footwear-design">Footwear Design</ion-item>
+              <ion-item href="#/news-by-topic/graphic-design">Graphic Design</ion-item>
+              <ion-item href="#/news-by-topic/interior-design">Interior Design</ion-item>
+              <ion-item href="#/news-by-topic/international-manufacturing-product-development">International Manufacturing &amp; Product Development</ion-item>
+              <ion-item href="#/news-by-topic/jewelry-design">Jewelry Design</ion-item>
+              <ion-item href="#/news-by-topic/merchanise-marketing">Merchanise Marketing</ion-item>
+              <ion-item href="#/news-by-topic/merchanise-product-development">Merchanise Product Development</ion-item>
+              <ion-item href="#/news-by-topic/textile-design">Textile Design</ion-item>
+              <ion-item href="#/news-by-topic/theatre-costume-design">Theatre Costume Design</ion-item>
+              <ion-item href="#/news-by-topic/visual-communications">Visual Communications</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-by-topic/alumni.html" type="text/ng-template">
+      <ion-view title="Alumni">
+        <ion-content padding="true" class="has-header"></ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/news-by-topic/careers.html" type="text/ng-template">
+      <ion-view title="Careers"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/fashion-news-events.html" type="text/ng-template">
+      <ion-view title="Fashion News Events"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/fidm-news.html" type="text/ng-template">
+      <ion-view title="FIDM News"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/fidm-students.html" type="text/ng-template">
+      <ion-view title="FIDM Students"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/video.html" type="text/ng-template">
+      <ion-view title="Video"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/apparel-industry-management.html" type="text/ng-template">
+      <ion-view title="Apparel Industry Management"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/beauty-industry-merchandising-marketing.html" type="text/ng-template">
+      <ion-view title="Beauty Industry Merchandising Marketing"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/digital-media.html" type="text/ng-template">
+      <ion-view title="Digital Media"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/entertainment-set-design-decoration.html" type="text/ng-template">
+      <ion-view title="Entertainment Set Design Decoration"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/fashion-design.html" type="text/ng-template">
+      <ion-view title="Fashion Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/fasion-knitwear-design.html" type="text/ng-template">
+      <ion-view title="Fasion Knitwear Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/film-tv-costume-design.html" type="text/ng-template">
+      <ion-view title="Film &amp; TV Costume Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/footwear-design.html" type="text/ng-template">
+      <ion-view title="Footwear Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/graphic-design.html" type="text/ng-template">
+      <ion-view title="Graphic Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/interior-design.html" type="text/ng-template">
+      <ion-view title="Interior Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/international-manufacturing-product-development.html" type="text/ng-template">
+      <ion-view title="International Manufacturing Product Development"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/jewelry-design.html" type="text/ng-template">
+      <ion-view title="Jewelry Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/merchanise-marketing.html" type="text/ng-template">
+      <ion-view title="Merchanise Marketing"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/merchanise-product-development.html" type="text/ng-template">
+      <ion-view title="Merchanise Product Development"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/textile-design.html" type="text/ng-template">
+      <ion-view title="Textile Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/theatre-costume-design.html" type="text/ng-template">
+      <ion-view title="Theatre Costume Design"></ion-view>
+    </script>
+    <script id="templates/news-by-topic/visual-communications.html" type="text/ng-template">
+      <ion-view title="Visual Communications"></ion-view>
+    </script>
+
+    <script id="templates/nav-stack.html" type="text/ng-template">
+      <ion-view view-title="Tab Nav Stack">
+        <ion-content class="padding">
+          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/events.html" type="text/ng-template">
+      <ion-view title="Events">
+        <ion-content>
+          <ion-list>
+            <ion-item>Event 1</ion-item>
+            <ion-item>Event 2</ion-item>
+            <ion-item>Event 3</ion-item>
+            <ion-item>Event 4</ion-item>
+            <ion-item>Event 5</ion-item>
+            <ion-item>Event 6</ion-item>
+            <ion-item>Event 7</ion-item>
+            <ion-item>Event 8</ion-item>
+            <ion-item>Event 9</ion-item>
+            <ion-item>Event 10</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+</div>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+  </script>
+
+  <script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout-22feac262e660b58689750d2f5d86903.js"></script>
+
+  <script>
+    angular.module('ionicApp', ['ionic']).config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('tabs', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
+    .state('tabs.home', {
+      url: '/home',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeTabCtrl'
+        }
+      }
+    })
+    .state('tabs.news-blogs', {
+        url: '/news-blogs',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs.html'
+          }
+        }
+    })
+    .state('tabs.news-blogs/fidm-news', {
+        url: '/news-blogs/fidm-news',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs/fidm-news.html'
+          }
+        }
+    })
+    .state('tabs.news-blogs/fidm-museum', {
+        url: '/news-blogs/fidm-museum',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs/fidm-museum.html'
+          }
+        }
+    })
+    .state('tabs.news-blogs/fidm-digital-arts', {
+        url: '/news-blogs/fidm-digital-arts',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs/fidm-digital-arts.html'
+          }
+        }
+    })
+    .state('tabs.news-blogs/fashion-club', {
+        url: '/news-blogs/fashion-club',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs/fashion-club.html'
+          }
+        }
+    })
+    .state('tabs.news-blogs/student-video-blog', {
+        url: '/news-blogs/student-video-blog',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-blogs/student-video-blog.html'
+          }
+        }
+    })
+    .state('tabs.news-by-topic', {
+        url: '/news-by-topic',
+        views: {
+          'home-tab': {
+            templateUrl: 'templates/news-by-topic.html'
+          }
+        }
+    })
+    .state('tabs.news-by-topic/alumni', {
+      url: '/news-by-topic/alumni',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/alumni.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/careers', {
+      url: '/news-by-topic/careers',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/careers.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/fashion-news-events', {
+      url: '/news-by-topic/fashion-news-events',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/fashion-news-events.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/fidm-news', {
+      url: '/news-by-topic/fidm-news',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/fidm-news.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/fidm-students', {
+      url: '/news-by-topic/fidm-students',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/fidm-students.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/video', {
+      url: '/news-by-topic/video',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/video.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/apparel-industry-management', {
+      url: '/news-by-topic/apparel-industry-management',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/apparel-industry-management.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/beauty-industry-merchandising-marketing', {
+      url: '/news-by-topic/beauty-industry-merchandising-marketing',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/beauty-industry-merchandising-marketing.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/digital-media', {
+      url: '/news-by-topic/digital-media',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/digital-media.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/entertainment-set-design-decoration', {
+      url: '/news-by-topic/entertainment-set-design-decoration',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/entertainment-set-design-decoration.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/fashion-design', {
+      url: '/news-by-topic/fashion-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/fashion-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/fasion-knitwear-design', {
+      url: '/news-by-topic/fasion-knitwear-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/fasion-knitwear-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/film-tv-costume-design', {
+      url: '/news-by-topic/film &amp; TV Costume Design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/film-tv-costume-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/footwear-design', {
+      url: '/news-by-topic/footwear-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/footwear-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/graphic-design', {
+      url: '/news-by-topic/graphic-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/graphic-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/interior-design', {
+      url: '/news-by-topic/interior-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/interior-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/international-manufacturing-product-development', {
+      url: '/news-by-topic/international-manufacturing-product-development',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/international-manufacturing-product-development.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/jewelry-design', {
+      url: '/news-by-topic/jewelry-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/jewelry-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/merchanise-marketing', {
+      url: '/news-by-topic/merchanise-marketing',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/merchanise-marketing.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/merchanise-product-development', {
+      url: '/news-by-topic/merchanise-product-development',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/merchanise-product-development.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/textile-design', {
+      url: '/news-by-topic/textile-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/textile-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/theatre-costume-design', {
+      url: '/news-by-topic/theatre-costume-design',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/theatre-costume-design.html'
+        }
+      }
+    })
+    .state('tabs.news-by-topic/visual-communications', {
+      url: '/news-by-topic/visual-communications',
+      views: {
+        'home-tab': {
+          templateUrl: 'templates/news-by-topic/visual-communications.html'
+        }
+      }
+    })
+    .state('tabs.about', {
+      url: '/about',
+      views: {
+        'about-tab': {
+          templateUrl: 'templates/about.html'
+        }
+      }
+    })
+    .state('tabs.navstack', {
+        url: '/navstack',
+        views: {
+          'about-tab': {
+            templateUrl: 'templates/nav-stack.html'
+          }
+        }
+    })
+    .state('tabs.events', {
+        url: '/events',
+        views: {
+          'events-tab': {
+            templateUrl: 'templates/events.html'
+          }
+        }
+      }
+    );
+    $urlRouterProvider.otherwise('/tab/home');
+}).controller('HomeTabCtrl', function ($scope) {
+    console.log('HomeTabCtrl');
+});
+  </script>
+
+</body>
+
+</html>
