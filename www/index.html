@@ -5,9 +5,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>Tabs Example</title>
-  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+  <title>FIDM App</title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/react/react.min.js"></script>
+  <script src="lib/lodash/dist/lodash.underscore.min.js"></script>
+  <script src="lib/backbone/backbone.js"></script>
+  <script src="lib/react.backbone/react.backbone.js"></script>
+  <script src="lib/moment/min/moment.min.js"></script>
+  <script src="lib/showdown/compressed/showdown.js"></script>
+  <script src="lib/backbone-react-calendar/dist/multi-calendar.js"></script>
 </head>
   <div ng-app="ionicApp">
 
@@ -50,12 +57,19 @@
     <script id="templates/about.html" type="text/ng-template">
       <ion-view view-title="About">
         <ion-content class="padding">
-          <h3>Create hybrid mobile apps with the web technologies you love.</h3>
-          <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
-          <p>Built with Sass and optimized for AngularJS.</p>
-          <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-          </p>
+          <ion-list>
+            <ion-item href="#">About FIDM</ion-item>
+            <ion-item href="#">Request College Info</ion-item>
+            <ion-item href="#">Contact Us</ion-item>
+            <ion-item href="#">FIDM Majors</ion-item>
+            <ion-item href="#">Photo Tour</ion-item>
+
+            <ion-item class="item-divider">Social Links</ion-item>
+
+            <ion-item href="#">Facebook</ion-item>
+            <ion-item href="#">Twitter</ion-item>
+            <ion-item href="#">Pinterest</ion-item>
+          </ion-list>
         </ion-content>
       </ion-view>
     </script>
@@ -78,10 +92,10 @@
       <ion-view title="FIDM News">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item>News Item 1</ion-item>
-            <ion-item>News Item 2</ion-item>
-            <ion-item>News Item 3</ion-item>
-            <ion-item>News Item 4</ion-item>
+            <ion-item href="#">News Item 1</ion-item>
+            <ion-item href="#">News Item 2</ion-item>
+            <ion-item href="#">News Item 3</ion-item>
+            <ion-item href="#">News Item 4</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -91,10 +105,10 @@
       <ion-view title="FIDM Museum">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item>Museum Item 1</ion-item>
-            <ion-item>Museum Item 2</ion-item>
-            <ion-item>Museum Item 3</ion-item>
-            <ion-item>Museum Item 4</ion-item>
+            <ion-item href="#">Museum Item 1</ion-item>
+            <ion-item href="#">Museum Item 2</ion-item>
+            <ion-item href="#">Museum Item 3</ion-item>
+            <ion-item href="#">Museum Item 4</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -104,10 +118,10 @@
       <ion-view title="FIDM Digital Arts">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item>Digital Arts Item 1</ion-item>
-            <ion-item>Digital Arts Item 2</ion-item>
-            <ion-item>Digital Arts Item 3</ion-item>
-            <ion-item>Digital Arts Item 4</ion-item>
+            <ion-item href="#">Digital Arts Item 1</ion-item>
+            <ion-item href="#">Digital Arts Item 2</ion-item>
+            <ion-item href="#">Digital Arts Item 3</ion-item>
+            <ion-item href="#">Digital Arts Item 4</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -117,10 +131,10 @@
       <ion-view title="Fashion Club">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item>Fashion Club Item 1</ion-item>
-            <ion-item>Fashion Club Item 2</ion-item>
-            <ion-item>Fashion Club Item 3</ion-item>
-            <ion-item>Fashion Club Item 4</ion-item>
+            <ion-item href="#">Fashion Club Item 1</ion-item>
+            <ion-item href="#">Fashion Club Item 2</ion-item>
+            <ion-item href="#">Fashion Club Item 3</ion-item>
+            <ion-item href="#">Fashion Club Item 4</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -130,10 +144,10 @@
       <ion-view title="Student Video Blog">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item>Student Video Blog Item 1</ion-item>
-            <ion-item>Student Video Blog Item 2</ion-item>
-            <ion-item>Student Video Blog Item 3</ion-item>
-            <ion-item>Student Video Blog Item 4</ion-item>
+            <ion-item href="#">Student Video Blog Item 1</ion-item>
+            <ion-item href="#">Student Video Blog Item 2</ion-item>
+            <ion-item href="#">Student Video Blog Item 3</ion-item>
+            <ion-item href="#">Student Video Blog Item 4</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -143,29 +157,29 @@
       <ion-view title="News By Topic">
         <ion-content padding="true" class="has-header">
           <ion-list>
-            <ion-item href="#/news-by-topic/alumni">Alumni</ion-item>
-              <ion-item href="#/news-by-topic/careers">Careers</ion-item>
-              <ion-item href="#/news-by-topic/fashion-news-events">Fashion News &amp; Events</ion-item>
-              <ion-item href="#/news-by-topic/fidm-news">FIDM News</ion-item>
-              <ion-item href="#/news-by-topic/fidm-students">FIDM Students</ion-item>
-              <ion-item href="#/news-by-topic/video">Video</ion-item>
-              <ion-item href="#/news-by-topic/apparel-industry-management">Apparel Industry Management</ion-item>
-              <ion-item href="#/news-by-topic/beauty-industry-merchandising-marketing">Beauty Industry Merchandising &amp; Marketing</ion-item>
-              <ion-item href="#/news-by-topic/digital-media">Digital Media</ion-item>
-              <ion-item href="#/news-by-topic/entertainment-set-design-decoration">Entertainment Set Design &amp; Decoration</ion-item>
-              <ion-item href="#/news-by-topic/fashion-design">Fashion Design</ion-item>
-              <ion-item href="#/news-by-topic/fasion-knitwear-design">Fasion Knitwear Design</ion-item>
-              <ion-item href="#/news-by-topic/film-tv-costume-design">Film &amp; TV Costume Design</ion-item>
-              <ion-item href="#/news-by-topic/footwear-design">Footwear Design</ion-item>
-              <ion-item href="#/news-by-topic/graphic-design">Graphic Design</ion-item>
-              <ion-item href="#/news-by-topic/interior-design">Interior Design</ion-item>
-              <ion-item href="#/news-by-topic/international-manufacturing-product-development">International Manufacturing &amp; Product Development</ion-item>
-              <ion-item href="#/news-by-topic/jewelry-design">Jewelry Design</ion-item>
-              <ion-item href="#/news-by-topic/merchanise-marketing">Merchanise Marketing</ion-item>
-              <ion-item href="#/news-by-topic/merchanise-product-development">Merchanise Product Development</ion-item>
-              <ion-item href="#/news-by-topic/textile-design">Textile Design</ion-item>
-              <ion-item href="#/news-by-topic/theatre-costume-design">Theatre Costume Design</ion-item>
-              <ion-item href="#/news-by-topic/visual-communications">Visual Communications</ion-item>
+            <ion-item href="#/tab/news-by-topic/alumni">Alumni</ion-item>
+              <ion-item href="#/tab/news-by-topic/careers">Careers</ion-item>
+              <ion-item href="#/tab/news-by-topic/fashion-news-events">Fashion News &amp; Events</ion-item>
+              <ion-item href="#/tab/news-by-topic/fidm-news">FIDM News</ion-item>
+              <ion-item href="#/tab/news-by-topic/fidm-students">FIDM Students</ion-item>
+              <ion-item href="#/tab/news-by-topic/video">Video</ion-item>
+              <ion-item href="#/tab/news-by-topic/apparel-industry-management">Apparel Industry Management</ion-item>
+              <ion-item href="#/tab/news-by-topic/beauty-industry-merchandising-marketing">Beauty Industry Merchandising &amp; Marketing</ion-item>
+              <ion-item href="#/tab/news-by-topic/digital-media">Digital Media</ion-item>
+              <ion-item href="#/tab/news-by-topic/entertainment-set-design-decoration">Entertainment Set Design &amp; Decoration</ion-item>
+              <ion-item href="#/tab/news-by-topic/fashion-design">Fashion Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/fasion-knitwear-design">Fasion Knitwear Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/film-tv-costume-design">Film &amp; TV Costume Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/footwear-design">Footwear Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/graphic-design">Graphic Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/interior-design">Interior Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/international-manufacturing-product-development">International Manufacturing &amp; Product Development</ion-item>
+              <ion-item href="#/tab/news-by-topic/jewelry-design">Jewelry Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/merchanise-marketing">Merchanise Marketing</ion-item>
+              <ion-item href="#/tab/news-by-topic/merchanise-product-development">Merchanise Product Development</ion-item>
+              <ion-item href="#/tab/news-by-topic/textile-design">Textile Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/theatre-costume-design">Theatre Costume Design</ion-item>
+              <ion-item href="#/tab/news-by-topic/visual-communications">Visual Communications</ion-item>
           </ion-list>
         </ion-content>
       </ion-view>
@@ -253,20 +267,20 @@
     </script>
 
     <script id="templates/events.html" type="text/ng-template">
+      <style>
+      .scroll-content .scroll {
+        height: 100%;
+      }
+      iframe {
+        background-color: transparent;
+        border: 0px none transparent;
+        padding: 0px;
+      }
+      </style>
+
       <ion-view title="Events">
         <ion-content>
-          <ion-list>
-            <ion-item>Event 1</ion-item>
-            <ion-item>Event 2</ion-item>
-            <ion-item>Event 3</ion-item>
-            <ion-item>Event 4</ion-item>
-            <ion-item>Event 5</ion-item>
-            <ion-item>Event 6</ion-item>
-            <ion-item>Event 7</ion-item>
-            <ion-item>Event 8</ion-item>
-            <ion-item>Event 9</ion-item>
-            <ion-item>Event 10</ion-item>
-          </ion-list>
+          <iframe height="100%" width="100%" src="https://marclundgren.github.io/backbone-react-calendar"></iframe>
         </ion-content>
       </ion-view>
     </script>
